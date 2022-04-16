@@ -48,15 +48,15 @@ function Header() {
                   </Link>
                 </li>
 
-                <li className="nav-item" onClick={logout}>
-                  <Link className="nav-link active" to="/">
-                    {currentUser && "Logout"}
-                  </Link>
-                </li>
-
                 <li className="nav-item">
                   <Link className="nav-link active" to="/cart">
                     <FaCartPlus className="mb-1 cartIcon" />
+                  </Link>
+                </li>
+
+                <li className="nav-item" onClick={logout}>
+                  <Link className="nav-link active" to="/">
+                    {currentUser && "Logout"}
                   </Link>
                 </li>
               </ul>

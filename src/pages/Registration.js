@@ -33,9 +33,12 @@ function Registration() {
       await register(formData.email, formData.password, formData.name);
       navigate("/");
     } catch (error) {
-      console.log(error);
       setLoading(false);
-      toast.error("Failed to create an account");
+      if(error.message === "Firebase: Error (auth/email-already-in-use).") {
+        toast.error("You already have an account!");
+      } else {
+        toast.error("Failed to register!");
+      }
     }
   }
 
